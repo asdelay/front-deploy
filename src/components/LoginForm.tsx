@@ -16,10 +16,9 @@ export const LoginForm: FC= () => {
         try{
             const result = (await (axios.post(`https://zenbit-tech-task-3bf5c7096197.herokuapp.com/auth/login`,{email:loginEmail, password:loginPassword}))).data
             result.token && dispatch(logIn())
-        } catch (e) {
-            alert(`Error! ${e?.response?.data}`)
-        } finally {
             navigate('/')
+        } catch (e) {
+            alert(`Error! ${typeof e.response.data === 'string' ? e.response.data : ''}`)
         }
 
     }
