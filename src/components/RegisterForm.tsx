@@ -18,7 +18,7 @@ export const RegisterForm: FC= () => {
             navigate('/')
         } catch (e) {
             alert(`Error! ${typeof e.response.data === 'string' ? e.response.data : ''}`)
-        }
+        }``
 
     }
 return (
